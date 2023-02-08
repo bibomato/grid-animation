@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+}
+
+#grid {
+    height: 100vh;
+    transition: 500ms;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    background: black;
+}
+
+:where(.left, .center, .right) {
+    transition: 300ms;
+    filter: grayscale(1);
+}
+
+:where(.left) {
+    background-image: url(../img/slide_01.jpg);
+    background-size: cover;
+}
+
+:where(.center) {
+    background-image: url(../img/slide_02.jpg);
+    background-size: cover;
+}
+
+:where(.right) {
+    background-image: url(../img/slide_03.jpg);
+    background-size: cover;
+}
+
+:where(.left, .center, .right):hover {
+    filter: grayscale(0);
+}
+
+:where(.left):hover {
+    background-image: url(../img/slide_01.jpg);
+    background-size: cover;
+}
+
+:where(.center):hover {
+    background-image: url(../img/slide_02.jpg);
+    background-size: cover;
+}
+
+:where(.right):hover {
+    background-image: url(../img/slide_03.jpg);
+    background-size: cover;
+}
+
+#grid:has(.left:hover) {
+    grid-template-columns: 2fr 0.5fr 0.5fr;
+}
+
+#grid:has(.center:hover) {
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+}
+
+#grid:has(.right:hover) {
+    grid-template-columns: 0.5fr 0.5fr 2fr;
+}
