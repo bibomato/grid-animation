@@ -17,14 +17,6 @@ body {
     background-size: cover;
 }
 
-.left, 
-.center, 
-.right {
-    transition: 300ms;
-    filter: grayscale(1);
-    background-size: cover;
-}
-
 .left {
     background-image: url(../img/slide_01.jpg);
 }
