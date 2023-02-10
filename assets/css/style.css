@@ -11,43 +11,34 @@ body {
     background: black;
 }
 
-:where(.left, .center, .right) {
+:is(.left, .center, .right) {
     transition: 300ms;
     filter: grayscale(1);
+    background-size: cover;
 }
 
-:where(.left) {
+.left, 
+.center, 
+.right {
+    transition: 300ms;
+    filter: grayscale(1);
+    background-size: cover;
+}
+
+.left {
     background-image: url(../img/slide_01.jpg);
-    background-size: cover;
 }
 
-:where(.center) {
+.center {
     background-image: url(../img/slide_02.jpg);
-    background-size: cover;
 }
 
-:where(.right) {
+.right {
     background-image: url(../img/slide_03.jpg);
-    background-size: cover;
 }
 
-:where(.left, .center, .right):hover {
+:is(.left, .center, .right):hover {
     filter: grayscale(0);
-}
-
-:where(.left):hover {
-    background-image: url(../img/slide_01.jpg);
-    background-size: cover;
-}
-
-:where(.center):hover {
-    background-image: url(../img/slide_02.jpg);
-    background-size: cover;
-}
-
-:where(.right):hover {
-    background-image: url(../img/slide_03.jpg);
-    background-size: cover;
 }
 
 #grid:has(.left:hover) {
